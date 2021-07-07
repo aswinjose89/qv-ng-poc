@@ -11,6 +11,8 @@
     "ais.data-normalize": "Data Normalize",
     "ais.training": "Training",
     "ais.prediction": "Prediction",
+    "deep-inspector": "Deep Inspector",
+    "deep-inspector.rl-assist": "RL Assist",
     "material": "Material",
     "material.form-controls": "Form Controls",
     "material.form-controls.autocomplete": "Autocomplete",

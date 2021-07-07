@@ -60,6 +60,23 @@
       ]
     },
     {
+      "route": "deep-inspector",
+      "name": "deep-inspector",
+      "type": "sub",
+      "icon": "search",
+      "label": {
+        "color": "indigo-500",
+        "value": "new"
+      },
+      "children": [
+        {
+          "route": "rl-assist",
+          "name": "rl-assist",
+          "type": "link"
+        }
+      ]
+    },
+    {
       "route": "design",
       "name": "design",
       "type": "sub",
