@@ -1,0 +1,76 @@
+
+<table mat-table
+       [dataSource]="dataSource"
+       cdkDropList
+       cdkDropListOrientation="horizontal"
+       (cdkDropListDropped)="drop($event)" class="mt-6">
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="uid">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> UID </th>
+    <td mat-cell *matCellDef="let element"> {{element.uid}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id.orig_h">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> orig_h </th>
+    <td mat-cell *matCellDef="let element"> {{element['id.orig_h']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id.orig_p">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> orig_p </th>
+    <td mat-cell *matCellDef="let element"> {{element['id.orig_p']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id.resp_h">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> resp_h </th>
+    <td mat-cell *matCellDef="let element"> {{element['id.resp_h']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id.resp_p">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> resp_p </th>
+    <td mat-cell *matCellDef="let element"> {{element['id.resp_p']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="attack_type">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> Attack Type </th>
+    <td mat-cell *matCellDef="let element"> <span class="text-danger">{{element.attack_type}}</span> </td>
+  </ng-container>
+
+  <ng-container matColumnDef="proto">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> proto </th>
+    <td mat-cell *matCellDef="let element"> {{element['proto']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="service">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> service </th>
+    <td mat-cell *matCellDef="let element"> {{element['service']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="duration">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> duration </th>
+    <td mat-cell *matCellDef="let element"> {{element['duration']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="orig_bytes">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> orig_bytes </th>
+    <td mat-cell *matCellDef="let element"> {{element['orig_bytes']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="resp_bytes">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> resp_bytes </th>
+    <td mat-cell *matCellDef="let element"> {{element['resp_bytes']}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="conn_state">
+    <th mat-header-cell cdkDrag *matHeaderCellDef> conn_state </th>
+    <td mat-cell *matCellDef="let element"> {{element['conn_state']}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table>

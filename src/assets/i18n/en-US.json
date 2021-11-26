@@ -13,6 +13,8 @@
     "ais.prediction": "Prediction",
     "deep-inspector": "Deep Inspector",
     "deep-inspector.rl-assist": "RL Assist",
+    "nids": "NIDS",
+    "nids.zeek-log-predict": "Zeek Prediction",
     "material": "Material",
     "material.form-controls": "Form Controls",
     "material.form-controls.autocomplete": "Autocomplete",

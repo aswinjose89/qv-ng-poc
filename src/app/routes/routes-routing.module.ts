@@ -37,6 +37,11 @@ const routes: Routes = [
         loadChildren: () => import('./deep-inspector/deep-inspector.module').then(m => m.DeepInspectorModule),
         data: { title: 'Deep Inspector', titleI18n: 'deepinspector' },
       },
+      {
+        path: 'nids',
+        loadChildren: () => import('./nids/nids.module').then(m => m.NidsModule),
+        data: { title: 'NIDS', titleI18n: 'nids' },
+      },
       // {
       //   path: 'design',
       //   loadChildren: () => import('./design/design.module').then(m => m.DesignModule),
