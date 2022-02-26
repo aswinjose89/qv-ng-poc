@@ -1,0 +1,172 @@
+<page-header></page-header>
+<mat-card>
+  <mat-card-title>Training</mat-card-title>
+  <mat-card-subtitle>Adversarial Composition of Random
+    Augmentations for Robust Training</mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="trainingform" class="form-field-full">
+        <div fxLayout="row wrap" fxLayoutGap="8px grid">
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>GPU</mat-label>
+              <input type="number" matInput placeholder="GPU" formControlName="gpu">
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Dataset</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of datasets" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Model</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of models" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>Epochs</mat-label>
+              <input type="number" matInput placeholder="epochs" formControlName="epochs">
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>Batch Size</mat-label>
+              <input type="number" matInput placeholder="Batch Size" formControlName="batchsize">
+            </mat-form-field>
+          </div>
+
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Optimizer</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of optimizers" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Attacker</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of attackers" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>Lambda</mat-label>
+              <input type="number" matInput placeholder="Lambda" formControlName="lambda">
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button mat-raised-button color="primary" (click)="submit(trainingform)">Train</button>
+          <button mat-raised-button color="secondary" (click)="reset(trainingform)" class="ms-2">Reset</button>
+        </div>
+      </form>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Testing</mat-card-title>
+  <mat-card-subtitle>Adversarial Composition of Random
+    Augmentations for Robust Training</mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="testform" class="form-field-full">
+        <div fxLayout="row wrap" fxLayoutGap="8px grid">
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>GPU</mat-label>
+              <input type="number" matInput placeholder="GPU" formControlName="gpu">
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Dataset</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of datasets" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Model</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of models" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>Checkpoint Path</mat-label>
+              <input matInput placeholder="Checkpoint Path" formControlName="ckpt_path">
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+              <mat-label>Saveroot Path</mat-label>
+              <input matInput placeholder="Saveroot Path" formControlName="save_root_path">
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Mode</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of modes" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+          <div fxFlex="20" fxFlex.lt-md="20">
+            <mat-form-field>
+                <mat-label>Corruption</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let option of corruptions" [value]="option.value">
+                    {{option.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center">
+          <button mat-raised-button color="primary" (click)="submit(testform)">Test</button>
+          <button mat-raised-button color="secondary" (click)="reset(testform)" class="ms-2">Reset</button>
+        </div>
+      </form>
+    </mat-card-content>
+</mat-card>
